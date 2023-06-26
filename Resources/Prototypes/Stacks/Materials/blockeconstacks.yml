@@ -1,0 +1,5 @@
+- type: stack
+  id: Creditchit
+  name: creditchit
+  icon: Objects/Specific/Blockecon/credchit.rsi
+  spawn: Creditchit1

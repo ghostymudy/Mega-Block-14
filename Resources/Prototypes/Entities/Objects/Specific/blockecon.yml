@@ -1,0 +1,96 @@
+- type: entity
+  name: credit chit
+  parent: BaseItem
+  id: Creditchit
+  suffix: 20 CC
+  description: A chit worth 100 credits. This is what it's all about. Gangers die for it, Corposcum live for it, and you need it. Now.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Blockecon/credchit.rsi
+    netsync: false
+    state: credchit
+  - type: Item
+    sprite: Objects/Specific/Blockecon/credchit.rsi
+  - type: Stack
+    count: 20
+    stackType: Creditchit
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 100
+  - type: Currency
+    price:
+      Creditchit: 1
+
+- type: entity
+  parent: Creditchit
+  id: Creditchit1
+  suffix: 1 CC
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: Creditchit
+  id: Creditchit5
+  suffix: 5 CC
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: Creditchit
+  id: Creditchit10
+  suffix: 10 CC
+  components:
+  - type: Stack
+    count: 10
+
+# Uplinks
+- type: entity
+  parent: BaseItem
+  id: BaseCreditWallet
+  name: credit wallet
+  description: A device designed to redeem or load disposable credchits.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/blockcredtab.rsi
+    layers:
+    - state: credtab
+    netsync: false
+  - type: Item
+    sprite: Objects/Devices/blockcredtab.rsi
+    heldPrefix: credtab
+  - type: UserInterface
+    interfaces:
+    - key: enum.StoreUiKey.Key
+      type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    preset: StorePresetCredWallet
+    balance:
+      Creditchit: 0
+
+- type: entity
+  parent: BaseCreditWallet
+  id: BaseCreditWallet20CC
+  suffix: 20 CC
+  components:
+  - type: Store
+    preset: StorePresetCredWallet
+    balance:
+      Creditchit: 20
+
+- type: entity
+  parent: BaseCreditWallet
+  id: BaseCreditWallet25CC
+  suffix: 25 CC
+  components:
+  - type: Store
+    preset: StorePresetCredWallet
+    balance:
+      Creditchit: 25
+
+

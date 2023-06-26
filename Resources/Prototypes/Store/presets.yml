@@ -15,3 +15,12 @@
   - UplinkPointless
   currencyWhitelist:
   - Telecrystal
+
+- type: storePreset
+  id: StorePresetCredWallet
+  storeName: CredWallet
+  categories:
+  - UplinkWeapons
+  - UplinkAmmo
+  currencyWhitelist:
+  - Creditchit
